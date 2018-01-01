@@ -1,4 +1,5 @@
-install_zabbix: True
+install_zabbix_centos6: True
+install_zabbix_centos7: True
 config_zabbix: True
 firewall_off: True
 
