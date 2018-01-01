@@ -1,0 +1,37 @@
+- name: install cacti,webserver,mysql,snmp
+  yum:
+   name: "{{item}}"
+   state: latest
+  with_items:
+   - httpd 
+   - httpd-devel 
+   - mysql 
+   - mysql-server
+   - php-mysql 
+   - php-pear 
+   - php-common 
+   - php-gd 
+   - php-devel 
+   - php 
+   - php-mbstring 
+   - php-cli 
+   - php-mysql 
+   - php-snmp
+   - net-snmp-utils 
+   - net-snmp-libs 
+   - php-pear-Net-SMTP 
+   - rrdtool
+   - MySQL-python
+   - libselinux-python
+   - cacti
+
+
+- name: start service
+  service:
+   name: "{{item}}"
+   state: started
+  with_items:
+    - mysqld
+    - httpd
+    - snmpd
+

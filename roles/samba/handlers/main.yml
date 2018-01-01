@@ -1,0 +1,5 @@
+---
+- name: enable
+  service: 
+   name: smb 
+   state: started

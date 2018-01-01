@@ -1,0 +1,6 @@
+- include: install_zabbix.yml
+  when: install_zabbix
+- include: config_zabbix.yml
+  when: config_zabbix
+- include: firewall_off.yml
+  when: firewall_off 

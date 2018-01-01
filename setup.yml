@@ -1,0 +1,12 @@
+---
+- hosts: cen6-real
+  roles:
+   - zabbix-server
+  
+#- hosts: cen7
+#  roles:
+#   - dhcp
+# - hosts: company
+#  roles: 
+#     - samba
+

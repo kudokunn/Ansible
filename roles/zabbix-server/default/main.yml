@@ -1,0 +1,7 @@
+---
+install_zabbix: False
+config_mysql: False
+config_zabbix: False
+firewall_off: False
+
+

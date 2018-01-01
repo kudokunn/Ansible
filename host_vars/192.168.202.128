@@ -1,0 +1,4 @@
+install_zabbix: True
+config_zabbix: True
+firewall_off: True
+

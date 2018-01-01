@@ -1,0 +1,30 @@
+- name: Removes anonymous user 
+  mysql_user:
+    name: ''
+    host: localhost
+    state: absent
+
+- name: create database cacti
+  mysql_db:
+   name: cacti
+   state: present
+
+- name: import database
+  mysql_db: name=cacti
+            login_user=root
+            login_password=''
+            target=/usr/share/doc/cacti-1.1.19/cacti.sql
+            state=import 
+
+
+- name: create a user mysql
+  mysql_user: 
+   login_user=root
+   login_password=''
+   name={{ user_mysql  }}
+   password={{ pass_user  }}
+   priv=*.*:ALL,GRANT
+   host=localhost
+
+- name: change pass root
+  command: mysqladmin -u root password {{ pass_root }}

@@ -1,0 +1,4 @@
+install_package: True
+config_cacti: True
+config_mysql: True
+firewall_off: True

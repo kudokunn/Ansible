@@ -1,0 +1,12 @@
+- name: install dhcp
+  yum:
+   name: dhcp
+   state: latest
+  notify: start service
+
+- name: config dhcp 
+  template:
+   src: dhcp.conf.j2
+   dest: /etc/dhcp/dhcpd.conf
+
+   

@@ -1,0 +1,6 @@
+---
+user_root_mysql: root
+pass_root: anh
+pass_user: minh
+user_mysql: cacti
+

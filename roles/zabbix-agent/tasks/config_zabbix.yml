@@ -1,0 +1,8 @@
+- name: config zabbix agent
+  lineinfile:
+    dest: /etc/zabbix/zabbix_agentd.conf
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  with_items:
+    - { regexp: '^Server=127.0.0.1', line: 'Server=192.168.202.135' }
+    - { regexp: '^ServerActive=127.0.0.1', line: 'ServerActive=192.168.202.135' }

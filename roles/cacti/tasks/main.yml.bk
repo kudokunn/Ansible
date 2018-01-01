@@ -1,0 +1,81 @@
+- name: install webserver,mysql, snmp
+  yum:
+   name: "{{item}}"
+   state: latest
+  with_items:
+   - httpd 
+   - httpd-devel 
+   - mysql 
+   - mysql-server
+   - php-mysql 
+   - php-pear 
+   - php-common 
+   - php-gd 
+   - php-devel 
+   - php 
+   - php-mbstring 
+   - php-cli 
+   - php-mysql 
+   - php-snmp
+   - net-snmp-utils 
+   - net-snmp-libs 
+   - php-pear-Net-SMTP 
+   - rrdtool
+   - MySQL-python
+   - libselinux-python
+   - cacti
+
+- name: start service
+  service:
+   name: "{{item}}"
+   state: started
+  with_items:
+    - mysqld
+    - httpd
+    - snmpd
+
+- name: login user root
+  mysql_user: name=root password='' priv=*.*:ALL state=present host=localhost
+ 
+- name: create database cacti
+  mysql_db:
+   name: cacti
+   state: present
+
+- name: change password user root
+  mysql_user: name=root
+              host=localhost
+              password='anh'
+              check_implicit_admin=yes
+              login_user=root
+              login_password=''
+              priv=*.*:ALL
+
+- name: remove config default
+  command: "{{item}}"
+  with_items:
+   - rm /usr/share/cacti/include/config.php
+   - rm /etc/httpd/conf.d/cacti.conf
+
+- name: import database
+  mysql_db: name=cacti
+            login_user=root
+            login_password=anh
+            target=/usr/share/doc/cacti-1.1.19/cacti.sql
+            state=import
+  
+- name: configure database cacti
+  template: 
+   src: config.php.j2
+   dest: /usr/share/cacti/include/config.php
+
+- name: config cacti
+  template:
+   src: cacti.conf.j2
+   dest: /etc/httpd/conf.d/cacti.conf
+  notify: restart webserver
+
+- name: stop firewall
+  service:
+   name: iptables
+   state: stopped

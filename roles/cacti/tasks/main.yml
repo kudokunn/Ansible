@@ -1,0 +1,9 @@
+- include: install_package.yml
+  when: install_package 
+- include: config_cacti.yml
+  when: config_cacti
+- include: config_mysql.yml
+  when: config_mysql
+- include: firewall_off.yml
+  when: firewall_off
+

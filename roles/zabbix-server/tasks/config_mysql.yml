@@ -1,0 +1,37 @@
+- name: Removes anonymous user 
+  mysql_user:
+    name: ''
+    host: localhost
+    state: absent
+ 
+- name: create database zabbix
+  mysql_db:
+   name: zabbix
+   state: present
+
+
+- name: create a user zabbix
+  mysql_user:
+   login_user=root
+   login_password=''
+   name={{user_mysql}}
+   password={{pass_user_mysql}}
+   host=localhost
+   priv=*.*:ALL
+   state=present
+
+- name: import database
+  mysql_db: name=zabbix
+            login_user={{user_mysql}}
+            login_password={{pass_user_mysql}}
+            target={{item}}
+            state=import
+  with_items:
+   - /usr/share/doc/zabbix-server-mysql-2.4.8/create/schema.sql
+   - /usr/share/doc/zabbix-server-mysql-2.4.8/create/images.sql
+   - /usr/share/doc/zabbix-server-mysql-2.4.8/create/data.sql
+
+
+- name: change pass root
+  command: mysqladmin -u root password {{ pass_root_mysql }}
+

@@ -1,0 +1,6 @@
+---
+install_package: False 
+config_cacti: False
+config_mysql: False
+firewall_off: False
+
