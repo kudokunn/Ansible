@@ -1,5 +1,7 @@
-- include: install_zabbix.yml
-  when: install_zabbix
+- include: install_zabbix_centos6.yml
+  when: (install_zabbix_centos6) and (ansible_distribution == "CentOS" and ansible_distribution_major_version == "6")
+- include: install_zabbix_centos6.yml
+  when: (install_zabbix_centos7) and (ansible_distribution == "CentOS" and ansible_distribution_major_version == "7")
 - include: config_mysql.yml
   when: config_mysql
 - include: config_zabbix.yml
