@@ -1,5 +1,5 @@
 ---
-- hosts: cen6-real
+- hosts: both
   roles:
    - zabbix-server
   

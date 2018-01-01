@@ -1,5 +1,5 @@
 install_zabbix_centos6: True
 install_zabbix_centos7: True
-config_zabbix: True
-config_mysql: True
-firewall_off: True
+config_zabbix: False
+config_mysql: False
+firewall_off: False
