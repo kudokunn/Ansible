@@ -1,0 +1,31 @@
+- name: install package prerequisite
+  apt: 
+   name: "{{item}}"
+   state: latest
+  with_items:
+   - apache2 
+   - mysql-server 
+   - php5
+   - php5-cli 
+   - php5-common 
+   - php5-mysql
+
+- name: Add repository zabbix 
+  command: "{{item}}"
+  with_items:
+   - wget http://repo.zabbix.com/zabbix/3.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_3.2-1+xenial_all.deb
+   - dpkg -i zabbix-release_3.2-1+xenial_all.deb
+   - apt-get update
+
+- name: install package
+  apt:
+   name: "{{item}}"
+   state: latest
+  with_items:
+   - zabbix-server-mysql 
+   - zabbix-frontend-php
+  notify: start enable services
+- name: start service
+  service:
+   name: mysqld
+   state: started
