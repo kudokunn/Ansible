@@ -27,5 +27,5 @@
   notify: start enable services
 - name: start service
   service:
-   name: mysqld
+   name: mysql
    state: started
