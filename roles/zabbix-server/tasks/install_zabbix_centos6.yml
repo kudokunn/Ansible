@@ -22,7 +22,7 @@
    - php-xml
    - zabbix-server-mysql
    - zabbix-web-mysql
-  notify: start enable services
+  notify: start enable services centos
 - name: start service
   service:
    name: mysqld
