@@ -8,6 +8,7 @@
 192.168.202.128 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
 [ubuntu]
 192.168.202.142 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
-[both]
+[all]
 192.168.202.200
-192.168.202.135
+192.168.202.128
+192.168.202.142
