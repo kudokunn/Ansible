@@ -1,9 +1,18 @@
-- name: start enable services
+- name: start enable services centos
   service: 
    name: "{{item}}"
    state: started
    enabled: yes
   with_items:
    - httpd 
+   - zabbix-server
+   
+- name: start enable services ubuntu
+  service: 
+   name: "{{item}}"
+   state: started
+   enabled: yes
+  with_items:
+   - apache2
    - zabbix-server
 
