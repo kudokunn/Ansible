@@ -34,5 +34,5 @@
   notify: start enable services
 - name: start service
   service:
-   name: mysqld
+   name: mariadb
    state: started
