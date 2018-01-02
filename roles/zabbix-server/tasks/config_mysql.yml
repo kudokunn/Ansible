@@ -24,12 +24,8 @@
   mysql_db: name=zabbix
             login_user={{user_mysql}}
             login_password={{pass_user_mysql}}
-            target={{item}}
+            target= /usr/share/doc/zabbix-server-mysql-3.0.14/create.sql.gz
             state=import
-  with_items:
-   - /usr/share/doc/zabbix-server-mysql-2.4.8/create/schema.sql
-   - /usr/share/doc/zabbix-server-mysql-2.4.8/create/images.sql
-   - /usr/share/doc/zabbix-server-mysql-2.4.8/create/data.sql
 
 
 - name: change pass root
