@@ -1,9 +1,16 @@
-- name: config time zabbix
+- name: config time zabbix-cen
   lineinfile:
     dest: /etc/httpd/conf.d/zabbix.conf
     regexp: '# php_value date.timezone Europe/Riga'
     line: 'php_value date.timezone Asian/Ho_Chi_Minh'
-
+  when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "7") or (ansible_distribution == "CentOS" and ansible_distribution_major_version == "6")
+- name: config timezone-un
+  lineinfile:
+    dest: /etc/php5/apache2/php.ini
+    regexp: '# date.timezone =*'
+    line: 'date.timezone = 'Asia/Ho_Chi_Minh''
+  when: (ansible_distribution == "Ubuntu" and ansible_distribution_major_version == "14")
+ 
 - name: config zabbix server
   lineinfile:
     dest: /etc/zabbix/zabbix_server.conf
