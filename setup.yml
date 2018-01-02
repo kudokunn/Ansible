@@ -1,5 +1,5 @@
 ---
-- hosts: 192.168.202.142
+- hosts: ubuntu
   roles:
    - zabbix-server
   
