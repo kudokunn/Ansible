@@ -24,7 +24,7 @@
   with_items:
    - zabbix-server-mysql 
    - zabbix-frontend-php
-  notify: start enable services
+  notify: start enable services ubuntu
 - name: start service
   service:
    name: mysql
