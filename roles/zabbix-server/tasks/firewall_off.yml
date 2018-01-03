@@ -2,7 +2,15 @@
   service:
    name: iptables
    state: stopped
-  notify: 
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "6"
+  
+  - name: stop firewall
+  service:
+   name: firewall
+   state: stopped
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
+  
+  
  
 
 
