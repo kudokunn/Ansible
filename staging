@@ -1,14 +1,14 @@
 [company]
 192.168.10.101 ansible_ssh_port=1102 ansible_ssh_user=root ansible_ssh_pass=idontneedtoknow!1
-[cen7-real]
+[cen7-local]
 192.168.202.200 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
-[cen6-real]
-192.168.202.135 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
 [cen6-clone]
+192.168.202.135 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
+[cen6-local]
 192.168.202.128 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
 [ubuntu]
 192.168.202.142 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
-[all]
+[abc]
 192.168.202.200
 192.168.202.128
 192.168.202.142
