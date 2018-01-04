@@ -5,4 +5,4 @@ config_mysql: True
 config_zabbix: True
 firewall_off: True
 install_zabbix: True
-ip-server: 192.168.202.200
+ip_server: 192.168.202.200
