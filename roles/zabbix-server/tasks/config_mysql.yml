@@ -1,5 +1,10 @@
-- name: imcompress sql
+- name: imcompress sql centos
   command: gunzip /usr/share/doc/zabbix-server-mysql-3.0.14/create.sql.gz
+  when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "7") or (ansible_distribution == "CentOS" and ansible_distribution_major_version == "6")
+
+#- name: imcompress sql ubuntu
+#  command: gunzip /usr/share/doc/zabbix-server-mysql/create.sql.gz
+#  when: (ansible_distribution == "Ubuntu" and ansible_distribution_major_version == "14")
 - name: Removes anonymous user 
   mysql_user:
     name: ''
@@ -22,12 +27,21 @@
    priv=*.*:ALL
    state=present
 
-- name: import database
+- name: import database centos
   mysql_db: name=zabbix
             login_user={{user_mysql}}
             login_password={{pass_user_mysql}}
             target=/usr/share/doc/zabbix-server-mysql-3.0.14/create.sql
             state=import
+  when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "7") or (ansible_distribution == "CentOS" and ansible_distribution_major_version == "6")
+
+- name: import database ubuntu
+  mysql_db: name=zabbix
+            login_user={{user_mysql}}
+            login_password={{pass_user_mysql}}
+            target=/usr/share/doc/zabbix-server-mysql/create.sql
+            state=import
+  when: (ansible_distribution == "Ubuntu" and ansible_distribution_major_version == "14")
 
 - name: change pass root
   command: mysqladmin -u root password {{ pass_root_mysql }}

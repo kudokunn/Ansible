@@ -1,5 +1,5 @@
 ---
-- hosts: cen7-local
+- hosts: ubuntu
   roles:
    - zabbix-server
   
