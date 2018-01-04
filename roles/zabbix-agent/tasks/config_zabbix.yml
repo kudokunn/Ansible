@@ -4,5 +4,5 @@
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
   with_items:
-    - { regexp: '^Server=127.0.0.1', line: 'Server=192.168.202.135' }
-    - { regexp: '^ServerActive=127.0.0.1', line: 'ServerActive=192.168.202.135' }
+    - { regexp: 'Server=127.0.0.1', line: 'Server={{ ip_server }}' }
+    - { regexp: 'ServerActive=127.0.0.1', line: 'ServerActive={{ ip-server }}' }
