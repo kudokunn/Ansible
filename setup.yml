@@ -1,11 +1,11 @@
 ---
-- hosts: cen6-local
-  roles:
-   - zabbix-agent
-
-#- hosts: zabbix-server-ubu-cen7
+#- hosts: cen6-local
 #  roles:
-#   - zabbix-server
+#   - zabbix-agent
+
+- hosts: abc
+  roles:
+   - zabbix-server
   
 #- hosts: cen7
 #  roles:
