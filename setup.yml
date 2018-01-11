@@ -4,6 +4,11 @@
 #   - zabbix-server
 
 - hosts: cen6-local
+#- hosts: cen6-local
+#  roles:
+#   - zabbix-agent
+
+- hosts: abc
   roles:
    - zabbix-agent  
 #- hosts: cen7

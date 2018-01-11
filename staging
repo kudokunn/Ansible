@@ -6,10 +6,15 @@
 192.168.202.135 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
 [cen6-local]
 192.168.202.128 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
+<<<<<<< HEAD
 [zabbixserver-ubu-cen7]
+=======
+[zabbix-server-ubu-cen7]
+>>>>>>> c8df518e5afda7198016a6b1604875ef895810eb
 192.168.202.142 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
 192.168.202.200 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
 [abc]
-192.168.202.200
-192.168.202.128
-192.168.202.142
+192.168.202.200 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
+192.168.202.142 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
+[ubuntu]
+192.168.202.142 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
