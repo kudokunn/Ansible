@@ -3,7 +3,7 @@
 #  roles:
 #   - zabbix-server
 
-- hosts: cen10
+- hosts: cen20
 #- hosts: cen6-local
 #  roles:
 #   - zabbix-agent
