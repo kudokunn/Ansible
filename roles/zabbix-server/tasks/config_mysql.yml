@@ -1,6 +1,6 @@
-- name: imcompress sql centos
-  command: gunzip /usr/share/doc/zabbix-server-mysql-3.0.14/create.sql.gz
-  when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "7") or (ansible_distribution == "CentOS" and ansible_distribution_major_version == "6")
+#- name: imcompress sql centos
+#  command: gunzip /usr/share/doc/zabbix-server-mysql-3.0.14/create.sql.gz
+#  when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "7") or (ansible_distribution == "CentOS" and ansible_distribution_major_version == "6")
 
 #- name: imcompress sql ubuntu
 #  command: gunzip /usr/share/doc/zabbix-server-mysql/create.sql.gz

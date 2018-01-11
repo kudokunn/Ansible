@@ -9,6 +9,8 @@
 [zabbix-server-ubu-cen7]
 192.168.202.142 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
 192.168.202.200 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
+[ubuntu]
+192.168.202.142 ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=12345linux54321
 [abc]
 192.168.202.200
 192.168.202.128
