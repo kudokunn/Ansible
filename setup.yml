@@ -1,11 +1,15 @@
 ---
+#- hosts: zabbixserver-ubu-cen7
+#  roles:
+#   - zabbix-server
+
+- hosts: cen20
 #- hosts: cen6-local
 #  roles:
 #   - zabbix-agent
 - hosts: ubuntu
   roles:
-   - zabbix-server
-  
+   - zabbix-agent  
 #- hosts: cen7
 #  roles:
 #   - dhcp

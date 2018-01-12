@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 800917b03d396e2216a5b2d8e2747a3507e94a46
 - name: Removes anonymous user 
   mysql_user:
     name: ''
