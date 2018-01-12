@@ -1,7 +1,3 @@
-install_zabbix_ubuntu14: True
-install_zabbix_centos6: True
-install_zabbix_centos7: True
-config_mysql: True
+install_zabbix: True
 config_zabbix: True
-firewall_off: True
-
+ip_server: 192.168.202.200

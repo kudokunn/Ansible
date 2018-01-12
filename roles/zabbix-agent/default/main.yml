@@ -1,7 +1,6 @@
 ---
 install_zabbix: False
 config_zabbix: False
-firewall_off: False
 ip_server: 192.168.202.142
 
 

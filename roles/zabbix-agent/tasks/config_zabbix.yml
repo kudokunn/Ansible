@@ -1,8 +1,4 @@
 - name: config zabbix agent
-  lineinfile:
+  template:
+    src: zabbix_agentd.conf.j2
     dest: /etc/zabbix/zabbix_agentd.conf
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-  with_items:
-    - { regexp: 'Server=*', line: 'Server={{ip_server}}' }
-    - { regexp: 'ServerActive=*', line: 'ServerActive={{ip_server}}' }
