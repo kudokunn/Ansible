@@ -3,5 +3,4 @@ install_zabbix_centos6: False
 install_zabbix_centos7: True
 config_zabbix: True
 config_mysql: True
-firewall_off: False
 
