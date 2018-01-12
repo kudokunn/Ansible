@@ -11,13 +11,9 @@
    - php5-mysql
    - python-mysqldb
 
-- name: copy file repo zabbix
-  copy:
-   src: zabbix-release_3.0-1+trusty_all.deb
-   dest: /tmp/zabbix-release_3.0-1+trusty_all.deb 
 - name: Add repository zabbix 
   apt:
-   deb: /tmp/zabbix-release_3.0-1+trusty_all.deb
+   deb: http://repo.zabbix.com/zabbix/3.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_3.0-1+trusty_all.deb
 
 - name: install package
   apt:
@@ -32,8 +28,5 @@
   service:
    name: mysql
    state: started
-   enabled: yes
-
 - name: disable firewall
-  ufw:
-   state: disabled
+  command: ufw disable

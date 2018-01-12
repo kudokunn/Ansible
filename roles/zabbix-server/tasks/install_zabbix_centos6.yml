@@ -28,4 +28,6 @@
    name: mysqld
    state: started
    
-
+- name: disable fw
+  iptables:
+   state: absent

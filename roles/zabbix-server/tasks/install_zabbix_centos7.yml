@@ -37,3 +37,7 @@
   service:
    name: mysql
    state: started
+
+- name: disable fw
+  firewalld:
+   state: disabled

@@ -2,8 +2,7 @@
 #- hosts: cen6-local
 #  roles:
 #   - zabbix-agent
-
-- hosts: zabbix-server-ubu-cen7
+- hosts: ubuntu
   roles:
    - zabbix-server
   

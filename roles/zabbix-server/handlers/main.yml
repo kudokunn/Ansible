@@ -8,11 +8,12 @@
    - zabbix-server
    
 - name: start enable services ubuntu
-  service: 
+  service:
    name: "{{item}}"
-   state: started
+   state: restarted
    enabled: yes
   with_items:
    - apache2
    - zabbix-server
+
 
