@@ -1,8 +1,0 @@
-- name: stop firewall
-  service:
-   name: iptables
-   state: stopped
-  notify: 
- 
-
-
