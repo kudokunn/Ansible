@@ -27,7 +27,8 @@
   service:
    name: mysqld
    state: started
-   
+
 - name: disable fw
-  iptables:
-   state: absent
+  service
+   name: iptables
+   state: stopped
