@@ -30,16 +30,13 @@
 
 - name: start service
   service:
-   name: ""{{item}}""
+   name: "{{item}}"
    state: started
    enabled: yes
-<<<<<<< HEAD
-
-=======
   with_items:
    - mysql
    - zabbix-server
->>>>>>> 800917b03d396e2216a5b2d8e2747a3507e94a46
+
 - name: disable firewall
   ufw:
    state: disabled

@@ -1,8 +1,8 @@
 ---
-- hosts: cen7-local
+- hosts: abc
   roles:
    - zabbix-server
 
-- hosts: company
+- hosts: cen6-local
   roles:
    - zabbix-agent
