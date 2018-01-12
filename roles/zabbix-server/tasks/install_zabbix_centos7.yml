@@ -33,6 +33,7 @@
    - zabbix-web-mysql
    - MySQL-python
   notify: start enable services centos
+
 - name: start service
   service:
    name: mysql
