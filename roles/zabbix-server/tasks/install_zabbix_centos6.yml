@@ -29,6 +29,6 @@
    state: started
 
 - name: disable fw
-  service
+  service:
    name: iptables
    state: stopped
